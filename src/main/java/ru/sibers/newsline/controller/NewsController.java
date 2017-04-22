@@ -89,16 +89,16 @@ public class NewsController {
         String pathToImage = null;
 
         try {
-            pathToImage = ImageUtil.saveImage(file);
+            pathToImage = ImageUtil.saveImage(file); // Trying to save the image
         } catch (ImageUploadException e) {
             // If there are exceptions when uploading the file, try again.
             mav.setViewName("addnews");
-            mav.addObject("error", e.getMessage());
+            mav.addObject("error", e.getMessage()); // Display an error on the web page
             return mav;
         }
 
-        news.setImageUrl(pathToImage);
-        newsService.addNews(news);
+        news.setImageUrl(pathToImage);  // Assign a value, otherwise the object is not added to the database
+        newsService.addNews(news);      // Adding news to the database
         mav.setViewName("redirect:/news");
         return mav;
     }
@@ -116,7 +116,7 @@ public class NewsController {
      * Filling the model with attributes, for pagination.
      */
     private void fillModelWithListNews(Model model, Integer pageNumber) {
-        Page<News> page = newsService.getAll(pageNumber, amountNews);
+        Page<News> page = newsService.getAll(pageNumber, amountNews); // Get news list for page № pageNumber
         int current = page.getNumber() + 1;
         int begin = Math.max(1, current - 5);
         int end = Math.min(begin + 10, page.getTotalPages());

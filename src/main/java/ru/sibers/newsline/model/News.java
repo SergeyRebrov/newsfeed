@@ -42,14 +42,15 @@ public class News {
         return id;
     }
 
+    // Getter & Setter for the Key
     public void setId(int id) {
         this.id = id;
     }
-
     public String getHeading() {
         return heading;
     }
 
+    // Getters & Setters for fields
     public void setHeading(String heading) {
         this.heading = heading;
     }
@@ -78,6 +79,7 @@ public class News {
         this.imageUrl = imageUrl;
     }
 
+    // ToString method
     @Override
     public String toString() {
         return "News{" +
