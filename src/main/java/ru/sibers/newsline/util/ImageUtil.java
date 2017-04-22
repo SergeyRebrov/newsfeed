@@ -8,10 +8,14 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Sergey on 21.04.2017.
+ * Utility for validate and uploading images.
  */
 public class ImageUtil {
 
+    /**
+     * Checks MultipartFile
+     * If there is an exception, throws ImageUploadException
+     */
     private static void validateImage(MultipartFile image) throws ImageUploadException {
 
         if (image.isEmpty() || image.getSize() == 0)
@@ -27,6 +31,9 @@ public class ImageUtil {
         }
     }
 
+    /**
+     * Uploads the image into the file system
+     * */
     public static String saveImage(String filename, MultipartFile image) throws ImageUploadException {
         validateImage(image);
 

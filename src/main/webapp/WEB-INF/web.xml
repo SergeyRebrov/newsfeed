@@ -6,6 +6,7 @@
 
     <display-name>NewsLine</display-name>
 
+    <!-- Spring MVC -->
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>
@@ -18,13 +19,13 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!-- Страницы ошибок -->
+    <!-- Error pages -->
     <error-page>
         <error-code>404</error-code>
         <location>/WEB-INF/pages/error404.jsp</location>
     </error-page>
 
-    <!-- Фильтр для перекодировки в utf8 -->
+    <!-- Encoding -->
     <filter>
         <filter-name>charsetFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

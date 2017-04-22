@@ -10,12 +10,13 @@
         http://www.springframework.org/schema/data/jpa
         http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--Scanning components in base-package (look for annotations) -->
+    <!-- Scanning components in base-package (look for annotations) -->
     <context:component-scan base-package="ru.sibers.newsline"/>
 
-    <!-- Datasource. Источник данных - база MySQL -->
+    <!-- Datasource. MySQL -->
     <context:property-placeholder location="classpath:app.properties" system-properties-mode="OVERRIDE"/>
 
+    <!-- Configure data source -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${db.driver}"/>
         <property name="url" value="${db.url}"/>
@@ -23,6 +24,7 @@
         <property name="password" value="${db.password}"/>
     </bean>
 
+    <!-- Configure entity Manager Factory -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="packagesToScan" value="ru.sibers.newsline.model"/>
         <property name="dataSource" ref="dataSource"/>
@@ -32,7 +34,6 @@
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
-
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
                   p:showSql="true">
@@ -45,23 +46,17 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <!-- Need for Repository abstraction -->
-    <!--<jpa:repositories base-package="ru.sibers.newsline.repository"/>-->
     <jpa:repositories base-package="ru.sibers.newsline.repository" entity-manager-factory-ref="entityManagerFactory"
                       transaction-manager-ref="transactionManager"/>
 
-    <!--Activates various annotations to be detected in bean classes: Spring's @Required and @Autowired and so on-->
-
-    <!-- Валидация и аннотации -->
-
+    <!-- Activates various annotations and validation -->
     <bean class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" id="validator"/>
     <mvc:annotation-driven validator="validator"/>
 
-
+    <!-- Configure Tiles -->
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
     </bean>
-
     <bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" id="tilesConfigurer">
         <property name="definitions">
             <list>
@@ -70,9 +65,10 @@
         </property>
     </bean>
 
-    <!-- Configure the multipart resolver -->
+    <!-- Configure the multipart resolver to upload files -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
+    <!-- Access to resource files -->
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
 </beans>
