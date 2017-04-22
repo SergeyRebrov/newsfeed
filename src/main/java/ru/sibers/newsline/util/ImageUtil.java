@@ -34,12 +34,12 @@ public class ImageUtil {
     /**
      * Uploads the image into the file system
      * */
-    public static String saveImage(String filename, MultipartFile image) throws ImageUploadException {
+    public static String saveImage(MultipartFile image) throws ImageUploadException {
         validateImage(image);
 
         String pathToImage = null;
         try {
-            File file = new File("C:/" + "/resources/images/" + filename);
+            File file = new File("C:/resources/images/" + image.getOriginalFilename());
             pathToImage = file.getAbsolutePath();
             FileUtils.writeByteArrayToFile(file, image.getBytes());
         } catch (IOException e) {

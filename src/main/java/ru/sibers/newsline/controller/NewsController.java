@@ -89,7 +89,7 @@ public class NewsController {
         String pathToImage = null;
 
         try {
-            pathToImage = ImageUtil.saveImage(file.getOriginalFilename(), file);
+            pathToImage = ImageUtil.saveImage(file);
         } catch (ImageUploadException e) {
             // If there are exceptions when uploading the file, try again.
             mav.setViewName("addnews");
