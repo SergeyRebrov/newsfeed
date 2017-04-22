@@ -39,7 +39,7 @@ public class ImageUtil {
 
         String pathToImage = null;
         try {
-            File file = new File(/*webRootPath*/"C:/" + "/resources/images/" + filename);
+            File file = new File("C:/" + "/resources/images/" + filename);
             pathToImage = file.getAbsolutePath();
             FileUtils.writeByteArrayToFile(file, image.getBytes());
         } catch (IOException e) {

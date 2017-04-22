@@ -45,7 +45,6 @@ public class NewsController {
         return "redirect:/news";
     }
 
-
     /**
      * List of news for the first page.
      */
@@ -129,7 +128,6 @@ public class NewsController {
         model.addAttribute("currentIndex", current);
         model.addAttribute("amountNews", amountNews);
     }
-
 
     /**
      * Binds the date from the Web request to the Date for the specified format..
