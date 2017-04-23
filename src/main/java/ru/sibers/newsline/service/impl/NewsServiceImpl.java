@@ -17,7 +17,6 @@ import javax.annotation.Resource;
  */
 
 @Service("NewsServiceImpl")
-@Transactional
 public class NewsServiceImpl implements NewsService {
 
     private static final Sort SORT_NEWS = new Sort(Sort.Direction.DESC,"publicationDate", "id");
@@ -26,6 +25,7 @@ public class NewsServiceImpl implements NewsService {
     private NewsRepository newsRepository;
 
     @Override
+    @Transactional
     public News addNews(News news) {
         return newsRepository.saveAndFlush(news);
     }

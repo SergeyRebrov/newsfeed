@@ -93,7 +93,7 @@ public class NewsController {
         } catch (ImageUploadException e) {
             // If there are exceptions when uploading the file, try again.
             mav.setViewName("addnews");
-            mav.addObject("error", e.getMessage()); // Display an error on the web page
+            mav.addObject("error", e.getMessage()); // Show errors on the web page
             return mav;
         }
 
@@ -121,7 +121,7 @@ public class NewsController {
         int begin = Math.max(1, current - 5);
         int end = Math.min(begin + 10, page.getTotalPages());
 
-        model.addAttribute("listNews", page.iterator());
+        model.addAttribute("listNews", page.iterator()); // List news on the web page
         model.addAttribute("totalPages", page.getTotalPages());
         model.addAttribute("beginIndex", begin);
         model.addAttribute("endIndex", end);

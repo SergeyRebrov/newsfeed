@@ -6,6 +6,5 @@ import ru.sibers.newsline.model.News;
 /**
  * Repository : News.
  */
-
 public interface NewsRepository extends JpaRepository<News, Integer> {
 }
