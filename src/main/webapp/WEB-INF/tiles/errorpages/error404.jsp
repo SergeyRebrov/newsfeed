@@ -4,4 +4,4 @@
 <div class="lead">
     Sorry, but there is no such page
 </div>
-<div><a href="/">Home page</a> </div>
+<div><a class="small" href="/">Home page</a> </div>

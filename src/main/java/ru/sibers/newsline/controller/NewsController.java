@@ -25,10 +25,10 @@ import java.util.Date;
  */
 
 @Controller
+@SessionAttributes(value = "amountNews")
 public class NewsController {
 
     private NewsService newsService;
-    private int amountNews = 10;
 
     @Autowired(required = true)
     @Qualifier(value = "NewsServiceImpl")
@@ -107,8 +107,8 @@ public class NewsController {
      * Assigns a value for the amount of news on the page.
      */
     @RequestMapping(value = "news/amount", method = RequestMethod.POST)
-    public String chooseAmountNews(@RequestParam("radioGroup") Integer amountNews) {
-        this.amountNews = amountNews;
+    public String chooseAmountNews(@RequestParam("radioGroup") Integer amountNews, Model model) {
+        model.addAttribute("amountNews", amountNews);
         return "redirect:/news";
     }
 
@@ -116,6 +116,10 @@ public class NewsController {
      * Filling the model with attributes, for pagination.
      */
     private void fillModelWithListNews(Model model, Integer pageNumber) {
+        Integer amountNews = (Integer) model.asMap().get("amountNews");
+        if (amountNews == null)
+            amountNews = 10;
+
         Page<News> page = newsService.getAll(pageNumber, amountNews); // Get news list for page № pageNumber
         int current = page.getNumber() + 1;
         int begin = Math.max(1, current - 5);

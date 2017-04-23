@@ -15,6 +15,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- Spring -->
         <spring.version>4.3.7.RELEASE</spring.version>
+        <!-- Tiles -->
         <tiles.version>3.0.7</tiles.version>
     </properties>
 
@@ -26,13 +27,13 @@
             <version>5.1.34</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/javax.persistence/persistence-api -->
+        <!-- javax.persistence-api -->
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+        <!-- javax.servlet.jsp-api -->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
@@ -55,13 +56,13 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <!-- spring-data-jpa -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
             <version>1.11.1.RELEASE</version>
         </dependency>
+
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -74,7 +75,7 @@
             <version>5.4.1.Final</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+        <!-- jstl -->
         <dependency>
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
@@ -92,7 +93,7 @@
             <version>${tiles.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <!-- commons-fileupload -->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
@@ -101,6 +102,8 @@
     </dependencies>
 
     <build>
+        <finalName>newsline</finalName>
+        <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

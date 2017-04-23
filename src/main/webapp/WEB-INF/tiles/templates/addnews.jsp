@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+<div class="small"><a href="/">Home Page</a></div>
 <div class="col-md-12">
     <h3>Add news</h3>
     <c:url var="addAction" value="/addnews/add"/>
