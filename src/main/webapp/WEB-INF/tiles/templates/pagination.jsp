@@ -8,16 +8,10 @@
 
     <c:if test="${totalPages != 0}">
         <ul class="pagination">
-            <c:choose>
-                <c:when test="${currentIndex == 1}">
-                    <li class="hidden"><a href="#">&lt;&lt;</a></li>
-                    <li class="hidden"><a href="#">&lt;</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="${firstUrl}">&lt;&lt;</a></li>
-                    <li><a href="${prevUrl}">&lt;</a></li>
-                </c:otherwise>
-            </c:choose>
+            <c:if test="${currentIndex != 1}">
+                <li><a href="${firstUrl}">&lt;&lt;</a></li>
+                <li><a href="${prevUrl}">&lt;</a></li>
+            </c:if>
             <c:forEach var="i" begin="${beginIndex}" end="${endIndex}">
                 <c:url var="pageUrl" value="/news/${i}"/>
                 <c:choose>
@@ -29,16 +23,10 @@
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
-            <c:choose>
-                <c:when test="${currentIndex == totalPages}">
-                    <li class="hidden"><a href="#">&gt;</a></li>
-                    <li class="hidden"><a href="#">&gt;&gt;</a></li>
-                </c:when>
-                <c:otherwise>
-                    <li><a href="${nextUrl}">&gt;</a></li>
-                    <li><a href="${lastUrl}">&gt;&gt;</a></li>
-                </c:otherwise>
-            </c:choose>
+            <c:if test="${currentIndex != totalPages}">
+                <li><a href="${nextUrl}">&gt;</a></li>
+                <li><a href="${lastUrl}">&gt;&gt;</a></li>
+            </c:if>
         </ul>
     </c:if>
 </div>
