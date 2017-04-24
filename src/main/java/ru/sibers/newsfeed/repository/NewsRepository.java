@@ -1,7 +1,7 @@
-package ru.sibers.newsline.repository;
+package ru.sibers.newsfeed.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.sibers.newsline.model.News;
+import ru.sibers.newsfeed.model.News;
 
 /**
  * Repository : News.

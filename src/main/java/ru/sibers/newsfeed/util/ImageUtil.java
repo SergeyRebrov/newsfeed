@@ -1,8 +1,8 @@
-package ru.sibers.newsline.util;
+package ru.sibers.newsfeed.util;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.web.multipart.MultipartFile;
-import ru.sibers.newsline.util.exception.ImageUploadException;
+import ru.sibers.newsfeed.util.exception.ImageUploadException;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,7 +1,7 @@
-package ru.sibers.newsline.service;
+package ru.sibers.newsfeed.service;
 
 import org.springframework.data.domain.Page;
-import ru.sibers.newsline.model.News;
+import ru.sibers.newsfeed.model.News;
 
 /**
  * Service Interface for entity News.

@@ -1,4 +1,4 @@
-package ru.sibers.newsline.util.exception;
+package ru.sibers.newsfeed.util.exception;
 
 /**
  * Image upload exception

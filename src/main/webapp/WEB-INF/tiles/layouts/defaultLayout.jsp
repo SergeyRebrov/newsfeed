@@ -15,7 +15,7 @@
     <div class="row border col-md-10 col-md-offset-1">
         <tiles:insertAttribute name="addNews"/>
         <tiles:insertAttribute name="amountNews"/>
-        <tiles:insertAttribute name="newsLine"/>
+        <tiles:insertAttribute name="newsFeed"/>
         <tiles:insertAttribute name="pagination"/>
         <tiles:insertAttribute name="body"/>
     </div>

@@ -1,4 +1,4 @@
-package ru.sibers.newsline.service.impl;
+package ru.sibers.newsfeed.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -6,9 +6,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.sibers.newsline.model.News;
-import ru.sibers.newsline.repository.NewsRepository;
-import ru.sibers.newsline.service.NewsService;
+import ru.sibers.newsfeed.model.News;
+import ru.sibers.newsfeed.repository.NewsRepository;
+import ru.sibers.newsfeed.service.NewsService;
 
 import javax.annotation.Resource;
 

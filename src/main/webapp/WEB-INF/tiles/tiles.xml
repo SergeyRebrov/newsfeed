@@ -7,7 +7,7 @@
     <definition name="default" template="/WEB-INF/tiles/layouts/defaultLayout.jsp">
         <put-attribute name="title" value=""/>
         <put-attribute name="addNews" value=""/>
-        <put-attribute name="newsLine" value=""/>
+        <put-attribute name="newsFeed" value=""/>
         <put-attribute name="amountNews" value=""/>
         <put-attribute name="pagination" value=""/>
         <put-attribute name="body" value=""/>
@@ -15,8 +15,8 @@
 
     <!-- News Page -->
     <definition name="news" extends="default">
-        <put-attribute name="title" value="News Line"/>
-        <put-attribute name="newsLine" value="/WEB-INF/tiles/templates/newsline.jsp"/>
+        <put-attribute name="title" value="News Feed"/>
+        <put-attribute name="newsFeed" value="/WEB-INF/tiles/templates/newsfeed.jsp"/>
         <put-attribute name="amountNews" value="/WEB-INF/tiles/templates/amountnews.jsp"/>
         <put-attribute name="pagination" value="/WEB-INF/tiles/templates/pagination.jsp"/>
     </definition>
