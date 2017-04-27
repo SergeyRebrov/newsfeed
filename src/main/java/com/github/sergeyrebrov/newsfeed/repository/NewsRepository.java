@@ -1,7 +1,7 @@
-package ru.sibers.newsfeed.repository;
+package com.github.sergeyrebrov.newsfeed.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.sibers.newsfeed.model.News;
+import com.github.sergeyrebrov.newsfeed.model.News;
 
 /**
  * Repository : News.

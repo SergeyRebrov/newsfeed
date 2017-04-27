@@ -1,4 +1,4 @@
-package ru.sibers.newsfeed.model;
+package com.github.sergeyrebrov.newsfeed.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;

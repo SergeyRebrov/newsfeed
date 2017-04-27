@@ -1,8 +1,8 @@
-package ru.sibers.newsfeed.util;
+package com.github.sergeyrebrov.newsfeed.util;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.web.multipart.MultipartFile;
-import ru.sibers.newsfeed.util.exception.ImageUploadException;
+import com.github.sergeyrebrov.newsfeed.util.exception.ImageUploadException;
 
 import java.io.File;
 import java.io.IOException;

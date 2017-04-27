@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- Scanning components in base-package (look for annotations) -->
-    <context:component-scan base-package="ru.sibers.newsfeed"/>
+    <context:component-scan base-package="com.sibers.newsfeed"/>
 
     <!-- Datasource. MySQL -->
     <context:property-placeholder location="classpath:app.properties" system-properties-mode="OVERRIDE"/>
@@ -26,7 +26,7 @@
 
     <!-- Configure entity Manager Factory -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="ru.sibers.newsfeed.model"/>
+        <property name="packagesToScan" value="com.sibers.newsfeed.model"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaPropertyMap">
             <props>
@@ -46,7 +46,7 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <jpa:repositories base-package="ru.sibers.newsfeed.repository" entity-manager-factory-ref="entityManagerFactory"
+    <jpa:repositories base-package="com.sibers.newsfeed.repository" entity-manager-factory-ref="entityManagerFactory"
                       transaction-manager-ref="transactionManager"/>
 
     <!-- Activates various annotations and validation -->

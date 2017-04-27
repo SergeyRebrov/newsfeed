@@ -1,4 +1,4 @@
-package ru.sibers.newsfeed.service.impl;
+package com.github.sergeyrebrov.newsfeed.service.impl;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -6,9 +6,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.sibers.newsfeed.model.News;
-import ru.sibers.newsfeed.repository.NewsRepository;
-import ru.sibers.newsfeed.service.NewsService;
+import com.github.sergeyrebrov.newsfeed.model.News;
+import com.github.sergeyrebrov.newsfeed.service.NewsService;
+import com.github.sergeyrebrov.newsfeed.repository.NewsRepository;
 
 import javax.annotation.Resource;
 

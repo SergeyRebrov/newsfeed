@@ -1,4 +1,4 @@
-package ru.sibers.newsfeed.util.exception;
+package com.github.sergeyrebrov.newsfeed.util.exception;
 
 /**
  * Image upload exception

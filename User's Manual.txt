@@ -1,0 +1,30 @@
+Project Configuration for Building
+
+Use MySQL database.
+To create a table in the database, use /src/main/resources/initDB.sql
+Before build the project, need to change the file /src/main/resources/app.properties.
+In db.url, specify the path to the database, db.username - specify username, db.password - user password.
+Example: 
+* db.url=jdbc:mysql://localhost:3306/newsline
+* db.username=user
+* db.password=userpass
+In file.directory, specify the location where the image will be saved, in file.maxSize, specify the maximum size of the upload file.
+Example:
+* file.directory= C:/resources/images/
+* file.maxSize=5
+
+Build the project using Maven.
+
+
+
+Instruction for use
+
+Select the amount of news on the page (10, 20 or 50) on the main page, in the upper right corner, click the "Select" button.
+Under the news feed there is a pagination, click on the number to go to the desired page.
+To add news, click on the link "Add news".
+* Heading - enter the title of the news;
+* Publication Date - enter the date of publication of the news;
+* Text News - enter the text of the news;
+* Upload image - select image to the news.
+Click the "Add News" button. If all the fields are filled correctly, the page will be redirected to the main page. Otherwise, the error information is displayed.
+

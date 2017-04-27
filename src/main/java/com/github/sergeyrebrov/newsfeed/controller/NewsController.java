@@ -1,4 +1,4 @@
-package ru.sibers.newsfeed.controller;
+package com.github.sergeyrebrov.newsfeed.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import ru.sibers.newsfeed.model.News;
-import ru.sibers.newsfeed.service.NewsService;
-import ru.sibers.newsfeed.util.ImageUtil;
-import ru.sibers.newsfeed.util.exception.ImageUploadException;
+import com.github.sergeyrebrov.newsfeed.model.News;
+import com.github.sergeyrebrov.newsfeed.service.NewsService;
+import com.github.sergeyrebrov.newsfeed.util.ImageUtil;
+import com.github.sergeyrebrov.newsfeed.util.exception.ImageUploadException;
 
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
